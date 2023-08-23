@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_loginCL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginFragment">
+    tools:context=".ui.LoginFragment"
+    android:background="@color/futuristic_background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/loginCV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/futuristic_background"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/transparent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/willkommenTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/text_login_willkommen"
+                android:textColor="@color/futuristic_text"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/willkommen2TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/text_login"
+                android:textColor="@color/futuristic_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/willkommenTV" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameTIF"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/willkommen2TV"
+                app:startIconDrawable="@drawable/baseline_person_outline_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameTEF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_login_username" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwortTIF"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usernameTIF"
+                app:startIconDrawable="@drawable/baseline_lock_open_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwortEditTEF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_login_password" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/forgetPasswortTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_login_forget_password"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="@+id/passwortTIF"
+                app:layout_constraintTop_toBottomOf="@+id/passwortTIF" />
+
+            <Button
+                android:id="@+id/loginBTN"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="74dp"
+                android:backgroundTint="@color/futuristic_primaryButton"
+                android:text="@string/button_login"
+                android:textColor="@color/futuristic_text"
+                app:layout_constraintEnd_toEndOf="@+id/passwortTIF"
+                app:layout_constraintStart_toStartOf="@+id/passwortTIF"
+                app:layout_constraintTop_toBottomOf="@+id/passwortTIF" />
+
+            <TextView
+                android:id="@+id/noAccountTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/text_login_noAccount"
+                android:textColor="@color/futuristic_text"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/registerKlickTV"
+                app:layout_constraintTop_toBottomOf="@+id/loginBTN" />
+
+            <TextView
+                android:id="@+id/registerKlickTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/text_login_register"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="@+id/loginBTN"
+                app:layout_constraintTop_toBottomOf="@+id/loginBTN" />
+
+            <Button
+                android:id="@+id/googleBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/futuristic_primaryButton"
+                android:drawableLeft="@drawable/baseline_google_24"
+                android:text="@string/button_google"
+                android:textColor="@color/futuristic_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/loginBTN"
+                app:layout_constraintTop_toTopOf="@+id/noAccountTV" />
+
+            <Button
+                android:id="@+id/facebookBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/futuristic_primaryButton"
+                android:drawableLeft="@drawable/baseline_meta_24"
+                android:text="@string/button_facebook"
+                android:textColor="@color/futuristic_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/loginBTN"
+                app:layout_constraintTop_toTopOf="@+id/noAccountTV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
