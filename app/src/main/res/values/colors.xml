@@ -16,6 +16,9 @@
 
     <color name="grey_custom1">#2C3E50</color>
     <color name="red_custom1">#E74C3C</color>
-    <color name="grey_custom2">#344675</color>
+
+    <color name="futuristic_background">#1C2833</color>
+    <color name="futuristic_primaryButton">#344675</color>
+    <color name="futuristic_text">#FDFEFE</color>
 
 </resources>

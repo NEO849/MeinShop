@@ -4,6 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/splashCL"
+    android:background="@color/futuristic_background"
     tools:context=".ui.SplashActivity">
+
+    <TextView
+        android:id="@+id/AppNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="@string/app_name"
+        android:textSize="22sp"
+        android:textColor="@color/futuristic_text"
+        app:layout_constraintBottom_toTopOf="@+id/appLogoIV"
+        app:layout_constraintEnd_toEndOf="@+id/appLogoIV"
+        app:layout_constraintStart_toStartOf="@+id/appLogoIV"/>
+
+
+    <ImageView
+        android:id="@+id/appLogoIV"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/description_icon_app"/>
+
+    <ProgressBar
+        android:id="@+id/splashPB"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="240dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/appLogoIV"
+        app:layout_constraintStart_toStartOf="@+id/appLogoIV"
+        app:layout_constraintTop_toBottomOf="@+id/appLogoIV" />
+
+    <LinearLayout
+        android:id="@+id/copyrightLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/copyrightTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/futuristic_text"
+            android:text="@string/text_copyright" />
+
+        <TextView
+            android:id="@+id/appVersionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/futuristic_text"
+            android:text="@string/text_appversion" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
