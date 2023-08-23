@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default colors -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="red">#FFCC0000</color>
+    <color name="green">#008000</color>
+
+    <!-- Elegant & Luxuriös Farbpalette -->
+    <color name="elegant_primary">#1A237E</color>
+    <color name="elegant_accent">#C5CAE9</color>
+    <color name="elegant_background">#FAFAFA</color>
+    <color name="elegant_text">#212121</color>
+
+    <!-- Modern & Minimalistisch Farbpalette -->
+    <color name="modern_primary">#2C3E50</color>
+    <color name="modern_accent">#E74C3C</color>
+    <color name="modern_background">#ECF0F1</color>
+    <color name="grau">#34495E</color>
+
+    <!-- Futuristisch & Technologisch Farbpalette -->
+    <color name="futuristic_primary">#344675</color>
+    <color name="futuristic_accent">#F39C12</color>
+    <color name="futuristic_background">#1C2833</color>
+    <color name="futuristic_text">#FDFEFE</color>
+</resources>
