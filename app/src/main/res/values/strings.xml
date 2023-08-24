@@ -19,6 +19,8 @@
     <string name="text_register_passwordConfirm">Password Confirm</string>
     <string name="text_register_question">Already have an Account?</string>
 
+    <string name="text_welcome">Welcome</string>
+
     <string name="button_login">Login</string>
     <string name="button_register">Register</string>
     <string name="button_google">Google</string>
