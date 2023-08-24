@@ -51,7 +51,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/willkommenTV" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/usernameTIF"
+                android:id="@+id/usernameLoginTIF"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -61,7 +61,7 @@
                 app:startIconDrawable="@drawable/baseline_person_outline_24">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/usernameTEF"
+                    android:id="@+id/usernameLoginTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/text_login_username" />
@@ -69,17 +69,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwortTIF"
+                android:id="@+id/passwortLoginTIF"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/usernameTIF"
+                app:layout_constraintTop_toBottomOf="@+id/usernameLoginTIF"
                 app:startIconDrawable="@drawable/baseline_lock_open_24">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwortEditTEF"
+                    android:id="@+id/passwortLoginTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/text_login_password" />
@@ -91,10 +91,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="4dp"
-                android:text="@string/text_login_forget_password"
+                android:text="@string/klick_text_login_forget_password"
                 android:textColor="@color/red"
-                app:layout_constraintEnd_toEndOf="@+id/passwortTIF"
-                app:layout_constraintTop_toBottomOf="@+id/passwortTIF" />
+                app:layout_constraintEnd_toEndOf="@+id/passwortLoginTIF"
+                app:layout_constraintTop_toBottomOf="@+id/passwortLoginTIF" />
 
             <Button
                 android:id="@+id/loginBTN"
@@ -104,9 +104,9 @@
                 android:backgroundTint="@color/futuristic_primaryButton"
                 android:text="@string/button_login"
                 android:textColor="@color/futuristic_text"
-                app:layout_constraintEnd_toEndOf="@+id/passwortTIF"
-                app:layout_constraintStart_toStartOf="@+id/passwortTIF"
-                app:layout_constraintTop_toBottomOf="@+id/passwortTIF" />
+                app:layout_constraintEnd_toEndOf="@+id/passwortLoginTIF"
+                app:layout_constraintStart_toStartOf="@+id/passwortLoginTIF"
+                app:layout_constraintTop_toBottomOf="@+id/passwortLoginTIF" />
 
             <TextView
                 android:id="@+id/noAccountTV"
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/text_login_register"
+                android:text="@string/klick_text_login_register"
                 android:textColor="@color/red"
                 app:layout_constraintEnd_toEndOf="@+id/loginBTN"
                 app:layout_constraintTop_toBottomOf="@+id/loginBTN" />
