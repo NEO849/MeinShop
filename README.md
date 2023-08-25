@@ -15,6 +15,8 @@
 
 ## II. Login/Registrieren, Daten zur Übung Lokal gespeichert
     + Die Überprüfung der Anmeldedaten werden im LoginViewModel durchgeführt, indem die eingegebenen Anmeldedaten mit einer Liste von Benutzern verglichen werden, die im UserRepository definiert sind
+        - LoginViewModel enthält die Logik zur Überprüfung der Benutzeranmeldeinformationen
+        - LoginFragment verwendet LoginViewModel und LoginUtils zur Validierung und Navigation
 
 ### 1. In der class User die Anmelde Attribute festlegen und zur Data class ändern, damit die Methoden verwendet werden können:  toString(), equals(), (Mit Standardwerten muß man kein separaten Klassen oder Konstruktoren für die unterschiedlichen Anforderungen erstellen) 
 ### 2. Im UserRepository Datensätze zum login/registrieren erstellen/simulieren, damit man login/registrieren simulieren kann

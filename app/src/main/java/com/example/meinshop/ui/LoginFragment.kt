@@ -1,46 +1,42 @@
 package com.example.meinshop.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.meinshop.R
 import com.example.meinshop.databinding.FragmentLoginBinding
+import com.example.meinshop.utils.LoginUtils
 import com.example.meinshop.viewModel.LoginViewModel
 
-class LoginFragment : Fragment() {
+class LoginFragment : Fragment(R.layout.fragment_login) {
 
+    private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val binding: FragmentLoginBinding = FragmentLoginBinding.inflate(inflater, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentLoginBinding.bind(view)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-
-        // Setzt die ErrorCardView standardmäßig auf GONE
-        binding.errorLoginCV.visibility = View.GONE
-
-        // Beobachten des Login-Status
-        viewModel.loginStatus.observe(viewLifecycleOwner, Observer { isSuccess ->
-            if (isSuccess) {
-                // Navigieren zum WelcomeScreen
-                binding.errorLoginCV.visibility = View.GONE // Verstecken der ErrorCardView
-            } else {
-                // Zeigt die ErrorCardView an
-                binding.errorLoginCV.visibility = View.VISIBLE // Anzeigen der ErrorCardView
-            }
-        })
 
         binding.loginBTN.setOnClickListener {
             val username = binding.usernameLoginTEF.text.toString()
             val password = binding.passwortLoginTEF.text.toString()
-            viewModel.login(username, password)
-        }
 
-        return binding.root
+            // Überprüfen, ob die Benutzereingaben gültig sind
+            if (LoginUtils().validateLogin(username, password)) {
+
+                // Überprüfen, ob der Benutzer in der Liste der registrierten Benutzer vorhanden ist
+                if (viewModel.isValidUser(username, password)) {
+                    // Navigieren zum WelcomeFragment
+                    findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+                } else {
+                    // Fehlermeldung anzeigen
+                }
+            } else {
+                // Fehlermeldung anzeigen
+            }
+        }
     }
 }

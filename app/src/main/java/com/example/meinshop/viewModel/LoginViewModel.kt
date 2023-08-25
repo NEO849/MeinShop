@@ -1,27 +1,20 @@
 package com.example.meinshop.viewModel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.meinshop.utils.LoginUtils
-import com.example.meinshop.utils.UserUtils
+import com.example.meinshop.repository.UserRepository
 
 class LoginViewModel : ViewModel() {
 
-    // LiveData für den Login-Status
-    val loginStatus = MutableLiveData<Boolean>()
+    private val userRepository = UserRepository()
 
-    // Instanzen der Hilfsklassen
-    private val loginUtils = LoginUtils()
-    private val userUtils = UserUtils()
-
-    fun login(userName: String, password: String) {
-        // Validierung der Benutzereingabe
-        if (loginUtils.validateLogin(userName, password)) {
-            // Überprüfung der Anmeldeinformationen
-            val user = userUtils.getUser(userName, password)
-            loginStatus.value = user != null
-        } else {
-            loginStatus.value = false  // Fehlerhafte Eingabe
+    // Überprüft, ob der Benutzer in der Liste der registrierten Benutzer vorhanden ist
+    fun isValidUser(username: String, password: String): Boolean {
+        // Schleife zum Durchlaufen der Liste der Benutzer
+        for (user in userRepository.loginUsers) {
+            if (user.userName == username && user.password == password) {
+                return true
+            }
         }
+        return false
     }
 }
