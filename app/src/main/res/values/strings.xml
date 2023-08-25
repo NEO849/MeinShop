@@ -11,6 +11,8 @@
     <string name="text_login_username">Username</string>
     <string name="text_login_password">Password</string>
     <string name="text_login_noAccount">Noch keinen Account?</string>
+    <string name="text_login_errorA">Login Fehlgeschlagen!</string>
+    <string name="text_login_errorB">Bitte überprüfen sie die Eingabe</string>
 
     <string name="text_register">Register</string>
     <string name="text_register_username">Username</string>
