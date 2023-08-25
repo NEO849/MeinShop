@@ -1,4 +1,8 @@
 package com.example.meinshop.viewModel
 
-class LoginViewModel {
+import androidx.lifecycle.ViewModel
+
+
+class LoginViewModel : ViewModel() {
+
 }

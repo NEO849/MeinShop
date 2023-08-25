@@ -17,10 +17,10 @@ data class User (
     var body_huefteZuHals: Double = 0.0,
     var body_handgelenkZuHals: Double = 0.0,
     var body_bauchUmfang: Double = 0.0,
-    var jeans_weite: Double = 0.0,
-    var jeans_laenge: Double = 0.0,
-    var anzug_hose: Double = 0.0,
-    var anzug_sacko: Double = 0.0,
-    var tshirt: Double = 0.0,
-    var schuhgroesse: Double = 0.0
+    var jeans_weite: Int = 0,
+    var jeans_laenge: Int = 0,
+    var anzug_hose: Int = 0,
+    var anzug_sacko: Int = 0,
+    var tshirt: String = "",
+    var schuhgroesse: Int = 0,
 )
