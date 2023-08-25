@@ -13,8 +13,10 @@
     * im nav_graph.xml den Host Fragment setzen und die aktionen zwischen den Fragmenten definieren
 
 
-## II. Lokal- Shared Preferences: Login,Registrieren, Überprüfen, Konto, Bezahlen, Überprüfen der Daten etc...
-### 1. In der class User die Anmelde Attribute festlegen und zur Data class ändern, damit die Methoden verwendet werden können:  toString(), equals() und hashCode()
-### 2. Im UserRepository Datensätze zum login/registrieren simulieren und die Methoden zum überprüfen der Daten hinzufügen
-### 3. Die ViewModel-Klassen verwenden das UserRepository, um auf die Daten zuzugreifen und die Geschäftslogik für Login und Registrierung zu implementieren
-### 4. Verwendung in den Views, nun kan man die ViewModel-Klassen in den entsprechenden Views (Fragments oder Activities) für Login und Registrierung verwenden
+## II. Login/Registrieren, Daten zur Übung Lokal gespeichert
+    + Die Überprüfung der Anmeldedaten werden im LoginViewModel durchgeführt, indem die eingegebenen Anmeldedaten mit einer Liste von Benutzern verglichen werden, die im UserRepository definiert sind
+
+### 1. In der class User die Anmelde Attribute festlegen und zur Data class ändern, damit die Methoden verwendet werden können:  toString(), equals(), (Mit Standardwerten muß man kein separaten Klassen oder Konstruktoren für die unterschiedlichen Anforderungen erstellen) 
+### 2. Im UserRepository Datensätze zum login/registrieren erstellen/simulieren, damit man login/registrieren simulieren kann
+### 3. Die ViewModel-Klassen verwenden das UserRepository, um auf die Daten zuzugreifen und die Logik/Überprüfungen für Login und Registrierung zu implementieren
+### 4. In der utils.kt die benötigten Methoden definieren
