@@ -20,22 +20,30 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         binding = FragmentLoginBinding.bind(view)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
+//        // Instanz der LoginUtils Klasse wird benötigt wenn Methodenaufruf so ist:(das L kleingeschrieben und ohne die Klammern) loginUtils.showErrorAndRetry(binding)
+//        val loginUtils = LoginUtils()
+
+//        // Zuerst die Fehlermeldung ausblenden, falls sie nicht in der xml Datei auf 2gone" gesetzt worden ist
+//        binding.errorLoginCV.visibility = View.GONE
+
         binding.loginBTN.setOnClickListener {
             val username = binding.usernameLoginTEF.text.toString()
             val password = binding.passwortLoginTEF.text.toString()
 
-            // Überprüfen, ob die Benutzereingaben gültig sind
+            // Überprüft ob die Benutzereingaben gültig sind
             if (LoginUtils().validateLogin(username, password)) {
 
-                // Überprüfen, ob der Benutzer in der Liste der registrierten Benutzer vorhanden ist
+                // Überprüft ob der Benutzer in der Liste der registrierten Benutzer vorhanden ist
                 if (viewModel.isValidUser(username, password)) {
                     // Navigieren zum WelcomeFragment
                     findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
                 } else {
-                    // Fehlermeldung anzeigen
+                    // Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt Eingabefelder
+                    LoginUtils().showErrorAndRetry(binding)
                 }
             } else {
-                // Fehlermeldung anzeigen
+                // Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt Eingabefelder
+                LoginUtils().showErrorAndRetry(binding)
             }
         }
     }

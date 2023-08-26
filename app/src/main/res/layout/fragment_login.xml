@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:text="@string/text_login_errorA"
+                android:textSize="18sp"
                 android:textColor="@color/futuristic_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="18dp"
+                android:textSize="18sp"
                 android:text="@string/text_login_errorB"
                 android:textColor="@color/futuristic_text"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -100,6 +102,8 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                app:boxStrokeColor="@color/futuristic_text"
+                app:hintTextColor="@color/futuristic_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/willkommen2TV"
@@ -109,7 +113,7 @@
                     android:id="@+id/usernameLoginTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@color/futuristic_text"
+                    android:textColor="@color/futuristic_text"
                     android:hint="@string/text_login_username" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -119,6 +123,8 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                app:boxStrokeColor="@color/futuristic_text"
+                app:hintTextColor="@color/futuristic_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usernameLoginTIF"
@@ -128,7 +134,7 @@
                     android:id="@+id/passwortLoginTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@color/futuristic_text"
+                    android:textColor="@color/futuristic_text"
                     android:hint="@string/text_login_password" />
             </com.google.android.material.textfield.TextInputLayout>
 

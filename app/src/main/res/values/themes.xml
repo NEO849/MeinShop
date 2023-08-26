@@ -5,5 +5,17 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.MeinShop" parent="Base.Theme.MeinShop" />
+    <style name="Theme.MeinShop" parent="Base.Theme.MeinShop">
+        <!-- Hier weitere Anpassungen für das Hauptthema  -->
+    </style>
+
+    <!-- Der neue TextInputLayout-Style -->
+    <style name="MyTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/futuristic_primaryButton</item>
+    </style>
+
+    <!-- Der neue TextInputEditText-Style -->
+    <style name="MyTextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/futuristic_primaryButton</item>
+    </style>
 </resources>
