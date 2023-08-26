@@ -26,14 +26,14 @@
 ### 1. UserRepository aktualisieren, loginUsers als veränderbare Liste zu deklarieren und eine Methode zum neuen Benutzers hinzuzufügen
 ### 2. In RegistrierViewModel.kt eine Methode hinzufügen, um einen neuen Benutzer zu registrieren
 ### 3. RegistrierenUtils erstellen, um die Benutzereingabe zu validieren
-### 4. Änderungen im RegistrierenFrgment 
+### 4. Änderungen im RegistrierenFragment 
     + SharedPreferences-Instanz namens sharedPreferences hinzugefügt
     + In der onViewCreated Methode die sharedPreferences initialisiert
     + Im OnClickListener für den Registrierungsbutton werden die Benutzerdaten in den SharedPreferences gespeichert
-### 5. Änderungen im LoginFrgment
-    + Benutzerdaten aus den SharedPreferences lesen
-    + Überprüfen ob die eingegebenen Daten mit den gespeicherten Daten übereinstimmen
-### 6. Testen ob alles klappt, Methode 3 gesetzt
+### 5. Änderungen im LoginFragment
+    + onClickListener für Login und Registrieren setzen
+    + Überprüfen ob die eingegebenen Daten mit den sharedPreferences übereinstimmen, oder mit den Daten in der UserRepository
+### 6. Testen ob alles klappt, Methode 1 und 3 getestet - IT works!
     Methode 1, Über den Device File Explorer:
         + Unter View > Tool Windows > Device File Explorer öffnen
         + Navigationspfad zu data > data > [Dein App-Paketname] > shared_prefs
@@ -44,7 +44,8 @@
     Methode 3, Log-Ausgaben:
         + In der LoginFragment.kt, Logcat verwenden um das neu erstellte Profil zu überprüfen
 
-
+## IV. 
+### 1. 
 
         
 

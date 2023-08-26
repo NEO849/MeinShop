@@ -23,6 +23,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Initialisieren der variablen für Data Binding und ViewModel
         binding = FragmentLoginBinding.bind(view)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
@@ -35,7 +36,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         // Initialisierung der SharedPreferences
         sharedPreferences = requireActivity().getSharedPreferences("MeinShopPrefs", Context.MODE_PRIVATE)
 
-        // OnClickListener für den "Registrieren" Text
+        // OnClickListener für den "Registrieren" Text und Navigations/Action Tag zum Registrieren Fragment
         binding.registerKlickTV.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
@@ -45,14 +46,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             val username = binding.usernameLoginTEF.text.toString()
             val password = binding.passwortLoginTEF.text.toString()
 
-            // Liest die gespeicherten Benutzerdaten aus SharedPreferences
-            val savedUsername = sharedPreferences.getString("username", null)
-            val savedPassword = sharedPreferences.getString("password", null)
-            // Log-Ausgabe zum Überprüfen der gespeicherten SharedPreferences
-            Log.d("SharedPreferences", "Username: $savedUsername, Password: $savedPassword")
-
-            // Überprüft ob die eingegebenen Daten mit den gespeicherten Daten übereinstimmen
-            if (username == savedUsername && password == savedPassword) {
+            // Überprüft, ob der Benutzer entweder in den SharedPreferences oder im Repository gültig ist
+            if (viewModel.isValidUserFromPrefs(requireContext(), username, password) ||
+                viewModel.isValidUserFromRepo(username, password)) {
                 // Navigiert zum WelcomeFragment, wenn die Anmeldung erfolgreich ist
                 findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
             } else {
