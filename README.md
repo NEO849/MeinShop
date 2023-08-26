@@ -22,3 +22,7 @@
 ### 2. Im UserRepository Datensätze zum login/registrieren erstellen/simulieren, damit man login/registrieren simulieren kann
 ### 3. Die ViewModel-Klassen verwenden das UserRepository, um auf die Daten zuzugreifen und die Logik/Überprüfungen für Login und Registrierung zu implementieren
 ### 4. In der utils.kt die benötigten Methoden definieren
+### 5. onKlickListener auf Registrieren Textfeld setzen
+
+## III. 
+### 1. 

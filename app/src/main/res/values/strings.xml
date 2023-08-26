@@ -20,6 +20,8 @@
     <string name="text_register_password">Password</string>
     <string name="text_register_passwordConfirm">Password Confirm</string>
     <string name="text_register_question">Already have an Account?</string>
+    <string name="text_register_errorA">Registrieren Fehlgeschlagen!</string>
+    <string name="text_register_errorB">Bitte überprüfen sie ihre Daten</string>
 
     <string name="text_welcome">Welcome</string>
 

@@ -26,11 +26,17 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 //        // Zuerst die Fehlermeldung ausblenden, falls sie nicht in der xml Datei auf 2gone" gesetzt worden ist
 //        binding.errorLoginCV.visibility = View.GONE
 
+        // OnClickListener für den "Registrieren" Text
+        binding.registerKlickTV.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
+        // OnClickListener für Username und Passwort
         binding.loginBTN.setOnClickListener {
             val username = binding.usernameLoginTEF.text.toString()
             val password = binding.passwortLoginTEF.text.toString()
 
-            // Überprüft ob die Benutzereingaben gültig sind
+            // Aufruf Hilfsfunktion, Überprüft ob die Benutzereingaben gültig sind
             if (LoginUtils().validateLogin(username, password)) {
 
                 // Überprüft ob der Benutzer in der Liste der registrierten Benutzer vorhanden ist
@@ -42,7 +48,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     LoginUtils().showErrorAndRetry(binding)
                 }
             } else {
-                // Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt Eingabefelder
+                // Aufruf Hilfsfunktion, Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt leeren Eingabefelder
                 LoginUtils().showErrorAndRetry(binding)
             }
         }

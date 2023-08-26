@@ -8,6 +8,52 @@
     tools:context=".ui.RegistrierenFragment"
     android:background="@color/futuristic_background">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/errorRegisterCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/futuristic_background"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/registerErrorTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/text_register_errorA"
+                android:textSize="18sp"
+                android:textColor="@color/futuristic_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/registerErrorBTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="18dp"
+                android:textSize="18sp"
+                android:text="@string/text_register_errorB"
+                android:textColor="@color/futuristic_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registerErrorTV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 <com.google.android.material.card.MaterialCardView
         android:id="@+id/registerCV"
@@ -48,12 +94,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/registerTV"
+                app:boxStrokeColor="@color/futuristic_text"
+                app:hintTextColor="@color/futuristic_text"
                 app:startIconDrawable="@drawable/baseline_person_outline_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/usernameRegisterTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/futuristic_text"
                     android:hint="@string/text_register_username" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -66,12 +115,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usernameRegisterTIF"
+                app:boxStrokeColor="@color/futuristic_text"
+                app:hintTextColor="@color/futuristic_text"
                 app:startIconDrawable="@drawable/baseline_mail_outline_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailRegisterTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/futuristic_text"
                     android:hint="@string/text_register_email" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,12 +135,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailRegisterTIF"
+                app:boxStrokeColor="@color/futuristic_text"
+                app:hintTextColor="@color/futuristic_text"
                 app:startIconDrawable="@drawable/baseline_security_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwortRegisterTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/futuristic_text"
                     android:hint="@string/text_register_password" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,12 +155,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/passwortRegisterTIF"
+                app:boxStrokeColor="@color/futuristic_text"
+                app:hintTextColor="@color/futuristic_text"
                 app:startIconDrawable="@drawable/baseline_lock_open_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwortConfirmRegisterTEF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/futuristic_text"
                     android:hint="@string/text_register_passwordConfirm" />
             </com.google.android.material.textfield.TextInputLayout>
 
