@@ -3,6 +3,7 @@ package com.example.meinshop.ui
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -47,6 +48,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             // Liest die gespeicherten Benutzerdaten aus SharedPreferences
             val savedUsername = sharedPreferences.getString("username", null)
             val savedPassword = sharedPreferences.getString("password", null)
+            // Log-Ausgabe zum Überprüfen der gespeicherten SharedPreferences
+            Log.d("SharedPreferences", "Username: $savedUsername, Password: $savedPassword")
 
             // Überprüft ob die eingegebenen Daten mit den gespeicherten Daten übereinstimmen
             if (username == savedUsername && password == savedPassword) {

@@ -6,11 +6,11 @@
 ### 3. SplashActivity definieren 
 ### 4. Layout von login und registrieren Fragment definieren
 ### 5. Navigation definieren
-    * SplashActivity als Startpunkt festlegen, im Androidmanifest den intent Filter vom MainActivity Abschnitt in den SplashActivity Abschnitt verschieben
-    * Von der SplashActivity.kt zur MainActivity navigieren, in der SplashActivity eine Progressbar hinzufügen um nach einer kurzen Verzögerung zur MainActivity zu navigieren
-    * MainActivity als Host für Fragmente, einen FragmentContainerView hinzuzufügen, der als Host für die Fragmente dient
-    * In der MainActivity, wird der LoginFragment zum FragmentContainerView hinzugefügt, wenn die Activity zum ersten Mal erstellt wird
-    * im nav_graph.xml den Host Fragment setzen und die aktionen zwischen den Fragmenten definieren
+    + SplashActivity als Startpunkt festlegen, im Androidmanifest den intent Filter vom MainActivity Abschnitt in den SplashActivity Abschnitt verschieben
+    + Von der SplashActivity.kt zur MainActivity navigieren, in der SplashActivity eine Progressbar hinzufügen um nach einer kurzen Verzögerung zur MainActivity zu navigieren
+    + MainActivity als Host für Fragmente, einen FragmentContainerView hinzuzufügen, der als Host für die Fragmente dient
+    + In der MainActivity, wird der LoginFragment zum FragmentContainerView hinzugefügt, wenn die Activity zum ersten Mal erstellt wird
+    + im nav_graph.xml den Host Fragment setzen und die aktionen zwischen den Fragmenten definieren
 
 ## II. Login
     + Die Überprüfung der Anmeldedaten werden im LoginViewModel durchgeführt, indem die eingegebenen Anmeldedaten mit einer Liste von Benutzern verglichen werden, die im UserRepository definiert sind
@@ -25,10 +25,27 @@
 ## III. SharedPreferences: Registrieren, Profil speichern und über Login nutzen
 ### 1. UserRepository aktualisieren, loginUsers als veränderbare Liste zu deklarieren und eine Methode zum neuen Benutzers hinzuzufügen
 ### 2. In RegistrierViewModel.kt eine Methode hinzufügen, um einen neuen Benutzer zu registrieren
-### 3. RegistrierUtils erstellen, um die Benutzereingabe zu validieren
-### 4. RegistrierenFrgment definieren und onKlickListener auf Registrieren Textfeld setzen
-### 5. zum Üben Registrieren simulieren und abspeichern des erstellten Profils, sowie Testen des Profils, mittels Login mit dem erstellten Profil
-    + SharedPreferences im RegistrierenFragment Klasse definieren
-    + Überprüfung und Lesen der Login Daten, in der LoginFragment Klasse
+### 3. RegistrierenUtils erstellen, um die Benutzereingabe zu validieren
+### 4. Änderungen im RegistrierenFrgment 
+    + SharedPreferences-Instanz namens sharedPreferences hinzugefügt
+    + In der onViewCreated Methode die sharedPreferences initialisiert
+    + Im OnClickListener für den Registrierungsbutton werden die Benutzerdaten in den SharedPreferences gespeichert
+### 5. Änderungen im LoginFrgment
+    + Benutzerdaten aus den SharedPreferences lesen
+    + Überprüfen ob die eingegebenen Daten mit den gespeicherten Daten übereinstimmen
+### 6. Testen ob alles klappt, Methode 3 gesetzt
+    Methode 1, Über den Device File Explorer:
+        + Unter View > Tool Windows > Device File Explorer öffnen
+        + Navigationspfad zu data > data > [Dein App-Paketname] > shared_prefs
+        + Auf die "MeinShopPrefs.xml" Datei, Rechtsklicken und  "Save As" auswähzlen, um die Registrierdaten Lokal zu speichern und den Inhalt anzusehen
+    Methode 2, Über den Debugger:
+        + Nachdem die Daten in SharedPreferences gespeichert sind, einen Breakpoint im code setzen
+        + Die App im Debug-Modus starten und warten bis der Breakpoint erreicht wird
+    Methode 3, Log-Ausgaben:
+        + In der LoginFragment.kt, Logcat verwenden um das neu erstellte Profil zu überprüfen
+
+
+
+        
 
 
