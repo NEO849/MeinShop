@@ -12,8 +12,7 @@
     * In der MainActivity, wird der LoginFragment zum FragmentContainerView hinzugefügt, wenn die Activity zum ersten Mal erstellt wird
     * im nav_graph.xml den Host Fragment setzen und die aktionen zwischen den Fragmenten definieren
 
-
-## II. Login, Daten zur Übung Lokal gespeichert
+## II. Login
     + Die Überprüfung der Anmeldedaten werden im LoginViewModel durchgeführt, indem die eingegebenen Anmeldedaten mit einer Liste von Benutzern verglichen werden, die im UserRepository definiert sind
         - LoginViewModel enthält die Logik zur Überprüfung der Benutzeranmeldeinformationen
         - LoginFragment verwendet LoginViewModel und LoginUtils zur Validierung und Navigation
@@ -23,11 +22,13 @@
 ### 3. Die ViewModel-Klassen verwenden das UserRepository, um auf die Daten zuzugreifen und die Logik/Überprüfungen für Login und Registrierung zu implementieren
 ### 4. In der utils.kt die benötigten Methoden definieren
 
-## III. Registrieren, Profil speichern und über Login nutzen
+## III. SharedPreferences: Registrieren, Profil speichern und über Login nutzen
 ### 1. UserRepository aktualisieren, loginUsers als veränderbare Liste zu deklarieren und eine Methode zum neuen Benutzers hinzuzufügen
 ### 2. In RegistrierViewModel.kt eine Methode hinzufügen, um einen neuen Benutzer zu registrieren
 ### 3. RegistrierUtils erstellen, um die Benutzereingabe zu validieren
 ### 4. RegistrierenFrgment definieren und onKlickListener auf Registrieren Textfeld setzen
-### 5. zum Üben Registrieren simulieren und abspeichern des erstellten Profils
+### 5. zum Üben Registrieren simulieren und abspeichern des erstellten Profils, sowie Testen des Profils, mittels Login mit dem erstellten Profil
+    + SharedPreferences im RegistrierenFragment Klasse definieren
+    + Überprüfung und Lesen der Login Daten, in der LoginFragment Klasse
 
 

@@ -1,5 +1,7 @@
 package com.example.meinshop.ui
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -12,8 +14,11 @@ import com.example.meinshop.viewModel.LoginViewModel
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
+    // Deklaraiere variable für Data Binding und ViewModel
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
+
+    private lateinit var sharedPreferences: SharedPreferences  // SharedPreferences-Instanz hinzugefügt
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,32 +28,32 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 //        // Instanz der LoginUtils Klasse wird benötigt wenn Methodenaufruf so ist:(das L kleingeschrieben und ohne die Klammern) loginUtils.showErrorAndRetry(binding)
 //        val loginUtils = LoginUtils()
 
-//        // Zuerst die Fehlermeldung ausblenden, falls sie nicht in der xml Datei auf 2gone" gesetzt worden ist
+//        // Zuerst die Fehlermeldung ausblenden, falls sie nicht in der xml Datei auf "gone" gesetzt worden ist
 //        binding.errorLoginCV.visibility = View.GONE
+
+        // Initialisierung der SharedPreferences
+        sharedPreferences = requireActivity().getSharedPreferences("MeinShopPrefs", Context.MODE_PRIVATE)
 
         // OnClickListener für den "Registrieren" Text
         binding.registerKlickTV.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
-        // OnClickListener für Username und Passwort
+        // OnClickListener für den Login Button
         binding.loginBTN.setOnClickListener {
             val username = binding.usernameLoginTEF.text.toString()
             val password = binding.passwortLoginTEF.text.toString()
 
-            // Aufruf Hilfsfunktion, Überprüft ob die Benutzereingaben gültig sind
-            if (LoginUtils().validateLogin(username, password)) {
+            // Liest die gespeicherten Benutzerdaten aus SharedPreferences
+            val savedUsername = sharedPreferences.getString("username", null)
+            val savedPassword = sharedPreferences.getString("password", null)
 
-                // Überprüft ob der Benutzer in der Liste der registrierten Benutzer vorhanden ist
-                if (viewModel.isValidUser(username, password)) {
-                    // Navigieren zum WelcomeFragment
-                    findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
-                } else {
-                    // Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt Eingabefelder
-                    LoginUtils().showErrorAndRetryLogin(binding)
-                }
+            // Überprüft ob die eingegebenen Daten mit den gespeicherten Daten übereinstimmen
+            if (username == savedUsername && password == savedPassword) {
+                // Navigiert zum WelcomeFragment, wenn die Anmeldung erfolgreich ist
+                findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
             } else {
-                // Aufruf Hilfsfunktion, Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt leeren Eingabefelder
+                // Zeigt die error cardView - Fehlermeldung an, wenn die Anmeldung fehlschlägt
                 LoginUtils().showErrorAndRetryLogin(binding)
             }
         }

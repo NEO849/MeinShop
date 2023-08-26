@@ -1,5 +1,7 @@
 package com.example.meinshop.ui
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -17,6 +19,9 @@ class RegistrierenFragment : Fragment(R.layout.fragment_registrieren) {
     private lateinit var binding: FragmentRegistrierenBinding
     private lateinit var viewModel: RegistrierViewModel
 
+    // SharedPreferences-Objekt
+    private lateinit var sharedPreferences: SharedPreferences
+
     // Überschreiben der onViewCreated-Methode, die aufgerufen wird, wenn die Ansicht des Fragments erstellt wurde
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,6 +29,9 @@ class RegistrierenFragment : Fragment(R.layout.fragment_registrieren) {
         // Initialisierung des Data Binding und des ViewModel
         binding = FragmentRegistrierenBinding.bind(view)
         viewModel = ViewModelProvider(this).get(RegistrierViewModel::class.java)
+
+        // Initialisierung des SharedPreferences, in "MeinShopPrefs" werden die Daten gespeichert
+        sharedPreferences = requireActivity().getSharedPreferences("MeinShopPrefs", Context.MODE_PRIVATE)
 
         // OnClickListener für den Registrierungsbutton
         binding.registerBTN.setOnClickListener {
@@ -39,6 +47,12 @@ class RegistrierenFragment : Fragment(R.layout.fragment_registrieren) {
             // Ruft die validateRegister-Methode aus der RegistrierenUtils-Klasse auf, um die Benutzereingaben zu validieren
             // Wenn die Validierung erfolgreich ist, wird der Benutzer registriert und zur Welcome-Seite weitergeleitet
             if (RegistrierenUtils().validateRegister(newUser, confirmPassword, viewModel.userRepository)) {
+                // Speichert die Benutzerdaten in SharedPreferences, durch "apply"- synchrom
+                val editor = sharedPreferences.edit()
+                editor.putString("username", username)
+                editor.putString("email", email)
+                editor.putString("password", password)
+                editor.apply()
                 // Fügt den neuen Benutzer zum UserRepository hinzu
                 viewModel.registerUser(newUser)
                 // Navigiert zur Welcome-Seite
