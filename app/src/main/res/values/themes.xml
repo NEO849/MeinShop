@@ -9,13 +9,13 @@
         <!-- Hier weitere Anpassungen für das Hauptthema  -->
     </style>
 
-    <!-- Der neue TextInputLayout-Style -->
-    <style name="MyTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/futuristic_primaryButton</item>
-    </style>
+<!--    &lt;!&ndash; Der neue TextInputLayout-Style &ndash;&gt;-->
+<!--    <style name="MyTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+<!--        <item name="boxStrokeColor">@color/red_custom1</item>-->
+<!--    </style>-->
 
-    <!-- Der neue TextInputEditText-Style -->
-    <style name="MyTextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
-        <item name="android:textColor">@color/futuristic_primaryButton</item>
-    </style>
+<!--    &lt;!&ndash; Der neue TextInputEditText-Style &ndash;&gt;-->
+<!--    <style name="MyTextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">-->
+<!--        <item name="android:textColor">@color/red_custom1</item>-->
+<!--    </style>-->
 </resources>

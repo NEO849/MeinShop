@@ -44,8 +44,10 @@
     Methode 3, Log-Ausgaben:
         + In der LoginFragment.kt, Logcat verwenden um das neu erstellte Profil zu überprüfen
 
-## IV. 
-### 1. 
+## IV. TopAppBar mit Zurück Pfeil setzen
+### 1. Vector Asset für die Toolbar setzen
+### 2. Im fragment_registrieren.xml die AppBar setzen 
+### 3. Im RegistrierenFragment.kt Logik definieren
 
         
 

@@ -30,8 +30,14 @@ class RegistrierenFragment : Fragment(R.layout.fragment_registrieren) {
         binding = FragmentRegistrierenBinding.bind(view)
         viewModel = ViewModelProvider(this).get(RegistrierViewModel::class.java)
 
-        // Initialisierung des SharedPreferences, in "MeinShopPrefs" werden die Daten gespeichert
+        // Initialisierung von SharedPreferences, in "MeinShopPrefs" werden die Daten gespeichert
         sharedPreferences = requireActivity().getSharedPreferences("MeinShopPrefs", Context.MODE_PRIVATE)
+
+        // OnClickListener für den "Zurück"-Button setzen
+        binding.backArrowIBT.setOnClickListener {
+            // Verwendung von NavController, um zur vorherigen Seite im NavGraph zurückzukehren
+            findNavController().navigateUp()
+        }
 
         // OnClickListener für den Registrierungsbutton
         binding.registerBTN.setOnClickListener {

@@ -13,8 +13,13 @@
     <string name="text_login_noAccount">Noch keinen Account?</string>
     <string name="text_login_errorA">Login Fehlgeschlagen!</string>
     <string name="text_login_errorB">Bitte überprüfen sie die Eingabe</string>
+    <string name="button_login">Login</string>
+    <string name="button_google">Google</string>
+    <string name="button_facebook">Facebook</string>
+    <string name="klick_text_login_forget_password">Passwort vergeßen?</string>
 
     <string name="text_register">Register</string>
+    <string name="text_backArrow">Zurück Pfeil</string>
     <string name="text_register_username">Username</string>
     <string name="text_register_email">Email</string>
     <string name="text_register_password">Password</string>
@@ -22,14 +27,16 @@
     <string name="text_register_question">Already have an Account?</string>
     <string name="text_register_errorA">Registrieren Fehlgeschlagen!</string>
     <string name="text_register_errorB">Bitte überprüfen sie ihre Daten</string>
+    <string name="text_search">Suche</string>
+    <string name="text_camera">Kamera</string>
+    <string name="text_mic">Microfon</string>
+    <string name="description_register">Registrieren</string>
+    <string name="description_imageButton_back">Zurück</string>
+    <string name="button_register">Register</string>
+    <string name="klick_text_login_register">Registrieren</string>
 
     <string name="text_welcome">Welcome</string>
 
-    <string name="button_login">Login</string>
-    <string name="button_register">Register</string>
-    <string name="button_google">Google</string>
-    <string name="button_facebook">Facebook</string>
-    <string name="klick_text_login_register">Registrieren</string>
-    <string name="klick_text_login_forget_password">Passwort vergeßen?</string>
+
 
 </resources>
