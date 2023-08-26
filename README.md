@@ -23,6 +23,7 @@
 ### 3. Die ViewModel-Klassen verwenden das UserRepository, um auf die Daten zuzugreifen und die Logik/Überprüfungen für Login und Registrierung zu implementieren
 ### 4. In der utils.kt die benötigten Methoden definieren
 ### 5. onKlickListener auf Registrieren Textfeld setzen
+### 6. zum Üben Registrieren simulieren und abspeichern des erstellten Profils
 
 ## III. 
 ### 1. 
