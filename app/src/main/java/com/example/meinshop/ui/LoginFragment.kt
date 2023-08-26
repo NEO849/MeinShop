@@ -45,11 +45,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
                 } else {
                     // Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt Eingabefelder
-                    LoginUtils().showErrorAndRetry(binding)
+                    LoginUtils().showErrorAndRetryLogin(binding)
                 }
             } else {
                 // Aufruf Hilfsfunktion, Fehlermeldung anzeigen und nach 2 Sekunden zurück zur Login Cardview, samt leeren Eingabefelder
-                LoginUtils().showErrorAndRetry(binding)
+                LoginUtils().showErrorAndRetryLogin(binding)
             }
         }
     }

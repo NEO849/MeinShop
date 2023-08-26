@@ -13,7 +13,7 @@ class LoginUtils {
         return userName.isNotEmpty() && password.isNotEmpty()
     }
 
-    fun showErrorAndRetry(binding: FragmentLoginBinding) {
+    fun showErrorAndRetryLogin(binding: FragmentLoginBinding) {
         // Fehlermeldung anzeigen
         binding.loginCV.visibility = View.GONE  // Versteckt die Login Cardview
         binding.errorLoginCV.visibility = View.VISIBLE  // Zeigt dafür die error Cardview samt Fehlermeldung an
