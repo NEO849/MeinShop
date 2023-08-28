@@ -24,3 +24,4 @@ data class User (
     var tshirt: String = "",
     var schuhgroesse: Int = 0,
 )
+
